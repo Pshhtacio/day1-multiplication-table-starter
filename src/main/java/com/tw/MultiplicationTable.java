@@ -30,6 +30,6 @@ public class MultiplicationTable {
     }
 
     public String generateSingleExpression(int multiplicand, int multiplier) {
-        return null;
+        return (multiplicand + "*" + multiplier + "=" + (multiplicand*multiplier)).toString();
     }
 }
