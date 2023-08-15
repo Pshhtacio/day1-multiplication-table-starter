@@ -2,15 +2,19 @@ package com.tw;
 
 public class MultiplicationTable {
     public String buildMultiplicationTable(int start, int end) {
+        boolean isNumbersValid = isValid(start, end);
+        if(isNumbersValid) {
+            return generateTable(start, end);
+        }
         return null;
     }
 
     public Boolean isValid(int start, int end) {
         boolean isNumbersValid = isStartNotBiggerThanEnd(start, end);
         if (isNumbersValid) {
-            return (isInRange(start) && isInRange(end)) ? true : null;
+            return (isInRange(start) && isInRange(end)) ? true : false;
         }
-        return null;
+        return false;
     }
 
     public Boolean isInRange(int number) {
