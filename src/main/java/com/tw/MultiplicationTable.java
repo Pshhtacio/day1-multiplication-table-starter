@@ -6,6 +6,10 @@ public class MultiplicationTable {
     }
 
     public Boolean isValid(int start, int end) {
+        boolean isNumbersValid = isStartNotBiggerThanEnd(start, end);
+        if(isNumbersValid){
+            return (isInRange(start) && isInRange(end)) ? true : null;
+        }
         return null;
     }
 
