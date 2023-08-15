@@ -7,7 +7,7 @@ public class MultiplicationTable {
 
     public Boolean isValid(int start, int end) {
         boolean isNumbersValid = isStartNotBiggerThanEnd(start, end);
-        if(isNumbersValid){
+        if (isNumbersValid) {
             return (isInRange(start) && isInRange(end)) ? true : null;
         }
         return null;
@@ -22,18 +22,22 @@ public class MultiplicationTable {
     }
 
     public String generateTable(int start, int end) {
-        return null;
+        StringBuilder line = new StringBuilder();
+        for (int row = start; row <= end; row++) {
+            line.append(generateLine(start, row)).append(System.lineSeparator());
+        }
+        return line.toString().trim();
     }
 
     public String generateLine(int start, int row) {
         StringBuilder line = new StringBuilder();
-        for(int i = start; i <= row; i++){
+        for (int i = start; i <= row; i++) {
             line.append(" " + generateSingleExpression(i, row) + " ");
         }
         return line.toString().trim();
     }
 
     public String generateSingleExpression(int multiplicand, int multiplier) {
-        return (multiplicand + "*" + multiplier + "=" + (multiplicand*multiplier)).toString();
+        return (multiplicand + "*" + multiplier + "=" + (multiplicand * multiplier)).toString();
     }
 }
