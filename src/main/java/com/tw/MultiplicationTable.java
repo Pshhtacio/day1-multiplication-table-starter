@@ -12,7 +12,7 @@ public class MultiplicationTable {
     public Boolean isValid(int start, int end) {
         boolean isNumbersValid = isStartNotBiggerThanEnd(start, end);
         if (isNumbersValid) {
-            return (isInRange(start) && isInRange(end)) ? true : false;
+            return isInRange(start) && isInRange(end);
         }
         return false;
     }
@@ -36,12 +36,12 @@ public class MultiplicationTable {
     public String generateLine(int start, int row) {
         StringBuilder line = new StringBuilder();
         for (int i = start; i <= row; i++) {
-            line.append(" " + generateSingleExpression(i, row) + " ");
+            line.append(" ").append(generateSingleExpression(i, row)).append(" ");
         }
         return line.toString().trim();
     }
 
     public String generateSingleExpression(int multiplicand, int multiplier) {
-        return (multiplicand + "*" + multiplier + "=" + (multiplicand * multiplier)).toString();
+        return (multiplicand + "*" + multiplier + "=" + (multiplicand * multiplier));
     }
 }
